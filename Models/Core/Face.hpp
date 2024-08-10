@@ -4,7 +4,8 @@
 【开发者及日期】 赵一彤 2024/7/24
 *************************************************************************/
 
-#pragma once
+#ifndef FACE_HPP
+#define FACE_HPP
 
 #include "Element.hpp"
 #include "Point.hpp"
@@ -33,6 +34,21 @@ class Face: public Element<N, 3> {
 
         // 使用 Element 的构造函数
         using Element<N, 3>::Element;
+        /**********************************************************************
+        【函数名称】 构造函数
+        【函数功能】 使用三个点初始化 Face 对象。
+        【参数】 
+            first: 第一个点。
+            second: 第二个点。
+            third: 第三个点。
+        【返回值】 无
+        【开发者及日期】 赵一彤 2024/7/24
+        **********************************************************************/
+        Face(
+            const Point<N>& first, 
+            const Point<N>& second,
+            const Point<N>& third
+        );
         /**********************************************************************
         【函数名称】 构造函数
         【函数功能】 使用一个 Element 初始化 Face 对象。
@@ -100,3 +116,5 @@ class Face: public Element<N, 3> {
 }
 
 #include "Face.tpp"
+
+#endif
